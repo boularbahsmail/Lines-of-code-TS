@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employees - Dashboard</title>
+    <title>Employees - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <style media="screen">
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
@@ -14,6 +14,9 @@
 
       body {
         padding: 20px 5px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
       }
 
       h2 {
@@ -37,6 +40,11 @@
 
       input {
         height: 45px;
+        width: 100%;
+      }
+
+      form {
+        width: 100%;
       }
 
       .delete {
@@ -55,74 +63,63 @@
 
       .container {
         padding: 50px 10px;
-        max-width: 900px;
+        max-width: 450px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
 
-      span {
-        padding: 5px 10px;
-        border-radius: 5px;
-        margin-top: 25px;
-        font-size: 14px;
+      #go {
+        display: none;
+        margin: 20px;
       }
-
-      .employees-div {
-        width: 900px;
-        max-width: 100%;
-      }
-
-      .wrapper {
-        padding: 20px;
-        border: 1px solid #eee;
-        border-radius: 5px;
-        margin-top: 20px;
-        width: 100%;
-        display: flex;
-      }
-
-      .info {
-        width: 95%;
-      }
-
-      #employee-bio {
-        height: 100px;
-        padding: 0 10px;
-      }
-
-      .delete-action {
-        width: 5%;
-        padding: 0;
-        height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .delete-action div {
-        cursor: pointer;
-        float: right;
-        position: absolute;
-      }
-
     </style>
   </head>
   <body>
     <div class="container text-center">
-      <h2 class="py-3">Dashboard</h2>
-      <div class="employees-div text-start my-4">
-        <h3 class="my-2">Employees :</h3>
-      </div>
+      <h2 class="py-3">Login</h2>
+      <form class="login-form" id="myForm">
+        <div class="col text-start">
+          <div class="col py-2">
+            <label for="employee-first-name" class="form-label">Username</label>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="user-name" autocomplete="off">
+          </div>
+
+          <div class="col py-3">
+            <label for="employee-last-name" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Password" aria-label="Password" id="password" autocomplete="off">
+          </div>
+        </div>
+        <button class="submit-button btn btn-warning my-4">Login</button>
+      </form>
+
+      <a href="" class="btn btn-warning" id="go">Go to Dashboard</a>
+
       <h6>&copy; 2021 Boularbah Ismail</h6>
     </div>
+    <script type="text/javascript">
+      let form = document.getElementById('myForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let username = document.querySelector('#user-name').value;
+        let password = document.querySelector('#password').value;
+        let toDashboard = document.getElementById('go');
+
+        if (username == "hangfire" && password == "hangfire") {
+          e.preventDefault();
+          form.style.display = "none";
+          go.href = "admin.html";
+          go.style.display = "block";
+        } else {
+          alert("Username or Password incorrect !");
+          form.reset();
+        }
+      })
+    </script>
     <!-- <script src="assets/js/App.js" defer></script> -->
-    <script src="assets/js/Dashboard.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous" defer></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
   </body>
 </html>

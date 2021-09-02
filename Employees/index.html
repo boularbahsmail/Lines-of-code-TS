@@ -36,7 +36,7 @@
         color: gray;
       }
 
-      input {
+      input, select {
         height: 45px;
       }
 
@@ -81,6 +81,12 @@
         margin-bottom: 35px;
       }
 
+      @media only screen and (max-width: 575px) {
+        .roles-label {
+          margin-top: 13px;
+        }
+      }
+
     </style>
   </head>
   <body class="d-flex align-items-center justify-content-center">
@@ -98,25 +104,28 @@
             <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="employee-last-name" autocomplete="off">
           </div>
         </div>
+        <div class="row py-2 text-start">
+          <div class="col">
+            <label for="employee-email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" placeholder="E-mail" aria-label="Last name" id="employee-email" autocomplete="off">
+          </div>
+
+          <div class="col-sm">
+            <label class="form-label roles-label" for="inlineFormSelectPref">Role</label>
+            <select class="form-control" id="employee-role">
+              <option selected></option>
+              <option value="Front-end Developer">Front-end Developer</option>
+              <option value="Back-end Developer">Back-end Developer</option>
+              <option value="Full-stack Developer">Full-stack Developer</option>
+              <option value="Mobile Developer">Mobile Developer</option>
+              <option value="DevOps Enginner">DevOps Enginner</option>
+            </select>
+          </div>
+        </div>
         <div class="col text-start">
           <div class="col-sm py-2">
             <label for="employee-bio" class="form-label">Bio</label>
             <textarea rows="8" cols="80" class="form-control py-2" placeholder="Bio" aria-label="Bio" id="employee-bio" autocomplete="off"></textarea>
-          </div>
-
-          <div class="col-sm py-2">
-            <label for="employee-role" class="form-label">Role</label>
-            <div class="col">
-              <label class="visually-hidden" for="inlineFormSelectPref">Roles</label>
-              <select class="form-select" id="employee-role">
-                <option selected></option>
-                <option value="Front-end Developer">Front-end Developer</option>
-                <option value="Back-end Developer">Back-end Developer</option>
-                <option value="Full-stack Developer">Full-stack Developer</option>
-                <option value="Mobile Developer">Mobile Developer</option>
-                <option value="DevOps Enginner">DevOps Enginner</option>
-              </select>
-            </div>
           </div>
         </div>
         <button class="submit-button btn btn-warning my-4">Confirm & Apply</button>
