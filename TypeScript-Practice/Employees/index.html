@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees - Apply</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style media="screen">
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        padding: 10px 5px;
+      }
+
+      h2 {
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-weight: bold;
+      }
+
+      h6 {
+        margin-top: 5px;
+      }
+
+      p {
+        line-height: 30px;
+        text-align: justify;
+        color: gray;
+      }
+
+      input {
+        height: 45px;
+      }
+
+      button {
+        height: 45px;
+        width: 180px;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      .container {
+        max-width: 800px;
+      }
+
+      span {
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-top: 25px;
+        font-size: 14px;
+      }
+
+      .wrapper {
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      #employee-bio {
+        height: 100px;
+        padding: 0 10px;
+      }
+
+      .applied {
+        padding: 25px;
+        display: none;
+      }
+
+      .applied img {
+        margin-bottom: 35px;
+      }
+
+    </style>
+  </head>
+  <body class="d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+      <h2 class="py-3">Apply now !</h2>
+      <form class="Submit-form">
+        <div class="row text-start">
+          <div class="col-sm py-2">
+            <label for="employee-first-name" class="form-label">First name</label>
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="employee-first-name" autocomplete="off">
+          </div>
+
+          <div class="col-sm py-2">
+            <label for="employee-last-name" class="form-label">Last name</label>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="employee-last-name" autocomplete="off">
+          </div>
+        </div>
+        <div class="col text-start">
+          <div class="col-sm py-2">
+            <label for="employee-bio" class="form-label">Bio</label>
+            <textarea rows="8" cols="80" class="form-control py-2" placeholder="Bio" aria-label="Bio" id="employee-bio" autocomplete="off"></textarea>
+          </div>
+
+          <div class="col-sm py-2">
+            <label for="employee-role" class="form-label">Role</label>
+            <div class="col">
+              <label class="visually-hidden" for="inlineFormSelectPref">Roles</label>
+              <select class="form-select" id="employee-role">
+                <option selected></option>
+                <option value="Front-end Developer">Front-end Developer</option>
+                <option value="Back-end Developer">Back-end Developer</option>
+                <option value="Full-stack Developer">Full-stack Developer</option>
+                <option value="Mobile Developer">Mobile Developer</option>
+                <option value="DevOps Enginner">DevOps Enginner</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="submit-button btn btn-warning my-4">Confirm & Apply</button>
+      </form>
+      <div class="applied">
+        <img src="https://img.icons8.com/pastel-glyph/50/000000/successful-delivery.png"/>
+        <h4>Applied successfully !</h4>
+      </div>
+      <!--
+      <div class="employees-div text-start my-4">
+        <h2 class="my-2">Employees :</h2>
+      </div>
+      -->
+      <h6>&copy; 2021 Boularbah Ismail</h6>
+    </div>
+    <script src="assets/js/App.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous" defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  </body>
+</html>
